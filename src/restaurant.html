@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Restaurant Info - Udacity course project" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta itemprop="name" content="Restaurant Info - Udacity course project">
+  <meta itemprop="image" content="img/icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta id="theme-color" name="theme-color" content="#d43900">
+  <link rel="icon" sizes="192x192" href="img/icon.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/other.css">
+  <link rel="stylesheet" media="screen and (max-width:754px)" href="css/media-medium.css" type="text/css">
+  <link rel="stylesheet" media="screen and (max-width:699px)"href="css/media-small.css">
+  <title>Restaurant Info</title>
+</head>
+
+<body class="inside">
+  <a class="skip" href="#restaurant-container" rel="noopener">Skip Google map</a>
+  <header>
+    <nav>
+      <h1 role="heading" aria-level="1">
+        <a href="/">Restaurant Reviews</a>
+      </h1>
+    </nav>
+    <ul id="breadcrumb" role="navigation">
+      <li role="listitem">
+        <a href="/" title="Go to the homepage">Home</a>
+      </li>
+    </ul>
+  </header>
+
+  <main id="maincontent">
+
+    <section id="map-container" role="application">
+      <div id="map"></div>
+    </section>
+
+    <section id="restaurant-container" tabindex="-1">
+      <h1 id="restaurant-name" tabindex="0" role="heading" aria-level="1"></h1>
+      <picture>
+        <source id="picture-small">
+        <source id="picture-large">
+        <img id="restaurant-img">
+      </picture>
+      <p id="restaurant-cuisine" tabindex="0"></p>
+      <p id="restaurant-address" tabindex="0"></p>
+      <table id="restaurant-hours" tabindex="0">
+        <caption id="restaurant-caption">Restaurant Hours</caption>
+      </table>
+    </section>
+
+    <section id="reviews-container">
+      <ul id="reviews-list" role="list" tabindex="0"></ul>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    Copyright (c) 2017
+    <a href="/" title="Go to the restaurant reviews homepage">
+      <strong>Restaurant Reviews</strong>
+    </a> All Rights Reserved.
+  </footer>
+
+  <script type="application/javascript" src="js/idb.min.js"></script>
+  <script type="text/javascript" src="js/restaurant_info.js"></script>
+  <script type="text/javascript" src="js/dbhelper.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChvEOI09hD9VMHQXJuONirhvptKrB6cLI&libraries=places&callback=initMap"></script>
+
+</body>
+
+</html>

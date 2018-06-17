@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Udacity Restaurant reviews course project">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta itemprop="name" content="Udacity Restaurant reviews course project">
+  <meta itemprop="image" content="img/icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta id="theme-color" name="theme-color" content="#d43900">
+  <script src="js/lazysizes.min.js"></script>
+  <link rel="icon" sizes="192x192" href="img/icon.png">
+  <link rel="preload" as="style" href="css/main.css" onload="this.rel='stylesheet'">
+  <link href="css/responsive.css">
+  <link rel="manifest" href="manifest.json">
+  <title>Restaurant Reviews</title>
+</head>
+
+<body>
+  <a class="skip" href="#restaurants" rel="noopener">Skip Google map</a>
+  <header>
+    <nav>
+      <h1 role="heading" aria-level="1">
+        <a href="/">Restaurant Reviews</a>
+      </h1>
+    </nav>
+  </header>
+  <main id="maincontent">
+    <section id="map-container" role="application">
+      <div id="map"></div>
+    </section>
+    <section id="restaurants" tabindex="-1">
+      <div class="filter-options">
+        <h2 role="heading" aria-level="2">Filter Results</h2>
+        <div class="filter-select-container">
+          <select id="neighborhoods-select" name="neighborhoods" aria-label="Select Neighborhood" onchange="updateRestaurants()">
+            <option value="all" aria-selected="true">All Neighborhoods</option>
+          </select>
+          <select id="cuisines-select" name="cuisines" aria-label="Select Cusisine" onchange="updateRestaurants()">
+            <option value="all" aria-selected="true">All Cuisines</option>
+          </select>
+        </div>
+      </div>
+      <ul id="restaurants-list" role="list"></ul>
+    </section>
+  </main>
+  <footer id="footer"> Copyright (c) 2017
+    <a href="/" title="Go to the restaurant reviews homepage">
+      <strong>Restaurant Reviews</strong>
+    </a> All Rights Reserved. </footer>
+
+  <script type="application/javascript" charset="utf-8" src="js/main.min.js"></script>
+  <script type="application/javascript" src="js/idb.min.js"></script>
+  <script type="application/javascript" charset="utf-8" src="js/dbhelper.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwEMXPuT4ldyzqfkfiwqZUi1qv4PAyOYg&libraries=places&callback=initMap"></script>
+</body>
+
+</html>

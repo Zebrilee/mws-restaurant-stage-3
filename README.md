@@ -1,3 +1,22 @@
+# Restaurant Review Project Stage 3
+
+## Running website in localhost
+### Frontend
+launch `python -m SimpleHTTPServer 8000` in  the folder MWS-RESTAURANT-STAGE-2/public
+
+### Backend
+launch sails server through the command `node server` in the
+folder MWS-RESTAURANT-STAGE-2
+
+
+The folder src contains all the frontend files before gulp optimizations
+
+
+------------------------------------------------------------------------------------------
+
+
+
+
 # Local Development API Server
 ## Usage
 #### Get Restaurants

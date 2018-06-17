@@ -1,0 +1,117 @@
+.filter-options{width:100%;min-height:50px;background-color:#0277bd;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-top:10px}.filter-options h2{color:white;font-size:1.2em;font-weight:400;line-height:1;margin-bottom:10px}.filter-options select{background-color:white;border:1px solid #fff;height:35px;font-size:1em;margin:10px;padding:0 10px;width:200px}.filter-options select:focus{background-color:#d43900;color:#fff}#restaurants-list{list-style:outside none none;margin:0;padding:30px 15px 60px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:distribute;justify-content:space-around}#restaurants-list li{background-color:#fff;border:1px solid #ccc;border-radius:20px 0;margin:15px;padding:0 30px 25px;width:270px}#restaurants-list li h2{color:#d43900;font-size:1.2em;font-weight:200;margin:20px 0 10px;text-transform:uppercase}#restaurants-list li a{background-color:#d43900;border-bottom:3px solid #eee;color:#fff;display:inline-block;margin:15px 0 0;padding:8px 30px 10px;text-transform:uppercase}#restaurants-list li a:focus{color:#d43900;background-color:#fff}#restaurants-list .restaurant-img{background-color:#ccc;display:block;max-width:100%}#restaurants-list p{margin:0}
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+body {
+  background-color: #f3f3f3;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+  position: relative
+}
+
+a {
+  text-decoration: none
+}
+
+a:hover {
+  color: #0277bd
+}
+
+a:focus {
+  color: #0277bd
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 20px
+}
+
+ul {
+  margin: 0;
+  padding: 0
+}
+
+li {
+  margin: 0;
+  padding: 0
+}
+
+#map {
+  height: 400px;
+  width: 100%
+}
+
+a.skip {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #d43900;
+  color: white;
+  padding: 8px;
+  z-index: 1000
+}
+
+a.skip:active {
+  top: 0
+}
+
+a.skip:focus {
+  top: 0
+}
+
+nav {
+  height: 80px;
+  background-color: #252831;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+
+nav h1 {
+  margin: auto
+}
+
+nav h1 a {
+  color: #fff;
+  font-weight: 200;
+  letter-spacing: 8px;
+  text-transform: uppercase
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  z-index: 100
+}
+
+#footer {
+  background-color: #444;
+  color: #eee;
+  font-size: .8em;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 25px 0;
+  bottom: 0;
+  position: absolute;
+  width: 100%
+}
+
+#footer a {
+  color: #ff9800
+}
+
+#footer a:focus {
+  background-color: #ff9800;
+  color: #444
+}
