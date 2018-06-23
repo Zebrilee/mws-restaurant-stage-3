@@ -94,7 +94,7 @@
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
   width: calc(50% - 40px);
-  padding: 30px 40px 80px;
+  padding: 30px 40px 40px;
 }
 
 #reviews-container h2, #review-form-container h2 {
@@ -119,7 +119,7 @@
   border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
-  margin: 0 0 30px;
+  margin: 0 0 40px;
   overflow: hidden;
   position: relative;
   width: 85%;
@@ -179,23 +179,31 @@
 
 #review-form-container{
   width: calc(43% - 40px);
-  padding: 30px 40px 80px
+  padding: 30px 40px 90px
 }
 #review-form input#name {
   width: 100%;
   height: 35px;
   margin: 0 0 10px;
+  font-size: 1em;
 }
 
 #review-form select {
   width: 100%;
-  height: 52px;
+  height: 35px;
   margin-top: 16px;
+  background-color: white;
+  border: 1px solid #fff;
+  font-size: 1em;
+
 }
 
 #review-form textarea {
   margin-top: 16px;
   width: 100%;
+  font-size: 1em;
+  background-color: white;
+  border: 1px solid #fff;
 }
 
 #review-form input#submit {
