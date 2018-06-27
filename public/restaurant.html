@@ -23,6 +23,7 @@
   <header>
     <nav>
       <h1 role="heading" aria-level="1">
+        <!-- <h2 id="offline-msg" role="alert">Offline</h2> -->
         <a href="/">Restaurant Reviews</a>
       </h1>
     </nav>
@@ -55,8 +56,8 @@
       <h2 tabindex="0">Add your review</h2>
       <form action="" id="review-form">
         <input type="hidden" name="restaurant_id" id="restaurant_id" value="" />
-        <input type="text" placeholder=" Name" id="name">
-        <select name="rating" id="rating">
+        <input type="text" name="name" placeholder=" Name" id="name" required>
+        <select name="rating" id="rating" name ="rating">
           <option value="none" disabled selected>Select rating</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -64,18 +65,22 @@
           <option value="4">4</option>
           <option value="5">5</option>
         </select>
-        <textarea name="comment" id="comment" cols="30" rows="10" placeholder=" Write your review"></textarea>
+        <textarea name="comment" id="comment" cols="30" rows="10" placeholder=" Write your review" required></textarea>
         <input id="submit" type="submit">
       </form>
     </section>
+
   </main>
   <footer id="footer"> Copyright (c) 2017
     <a href="/" title="Go to the restaurant reviews homepage">
       <strong>Restaurant Reviews</strong>
     </a> All Rights Reserved. </footer>
   <script type="application/javascript" src="js/idb.min.js"></script>
-  <script type="text/javascript" src="js/restaurant_info.min.js"></script>
+
   <script type="text/javascript" src="js/dbhelper.min.js"></script>
+  <script type="text/javascript" src="js/restaurant-main.js"></script>
+  <script type="text/javascript" src="js/restaurant_info.min.js"></script>
+
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwEMXPuT4ldyzqfkfiwqZUi1qv4PAyOYg&libraries=places&callback=initMap"></script>
 </body>
 
