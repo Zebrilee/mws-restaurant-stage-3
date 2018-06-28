@@ -181,7 +181,7 @@
   width: calc(43% - 40px);
   padding: 30px 40px 90px
 }
-#review-form input#name {
+#review-form input {
   width: 100%;
   height: 35px;
   margin: 0 0 10px;
