@@ -33,7 +33,7 @@ var filesToCache = [
 ];
 
 
-let cacheName = 'restaurant-review-cache-v11';
+let cacheName = 'restaurant-review-cache-v12';
 
 // Listen for install event, set callback
 self.addEventListener('install', function (event) {
