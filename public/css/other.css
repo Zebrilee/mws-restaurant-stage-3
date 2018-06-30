@@ -225,3 +225,17 @@ nav #offline-msg {
 .offline nav #offline-msg {
   display:block;
 }
+
+.fav-icon {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
