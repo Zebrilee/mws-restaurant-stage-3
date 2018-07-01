@@ -1,6 +1,6 @@
 let restaurants,
-    neighborhoods,
-    cuisines;
+  neighborhoods,
+  cuisines;
 var map;
 var markers = [];
 
@@ -71,18 +71,18 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
 /**
  * Initialize Google map, called from HTML.
  */
-window.initMap = () => {
-  let loc = {
-    lat: 40.722216,
-    lng: -73.987501
-  };
-  self.map = new google.maps.Map(document.getElementById('map'), {
+initMap = (() => {
+  self.newMap = L.map("map", {
+    center: [40.722216, -73.987501],
     zoom: 12,
-    center: loc,
-    scrollwheel: false
-  });
-  updateRestaurants();
-}
+    scrollWheelZoom: !1
+  }), L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}", {
+    mapboxToken: "pk.eyJ1IjoiemVicmlsZWUiLCJhIjoiY2ppejlzMHZvMDR0ejN3bHoyZXFub21lMCJ9.ZgeOqjoMglGD2nZS7mNOxg",
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    id: "mapbox.streets"
+  }).addTo(newMap), updateRestaurants()
+})
 
 /**
  * Update page and map for current restaurants.
@@ -138,11 +138,42 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
+  favouriteIcon.addEventListener('click', (event) => {
+    if (event.target === event.currentTarget) {
+      let classAttr = event.target.className;
+      if (classAttr === 'favourite') {
+        DBHelper.restaurantFavourite(restaurant.id, true, (error, response) => {
+          if (response) {
+            favImg.alt = 'restaurant is your favourite';
+            favImg.src = 'img/favourite.png';
+            event.target.className = 'favourite fav-fill';
+          } else {
+            alert("Something Went Wrong");
+            console.log(error);
+          }
+        })
+      } else {
+        DBHelper.restaurantFavourite(restaurant.id, false, (error, response) => {
+          if (response) {
+            favImg.alt = 'restaurant is not your favourite';
+            favImg.src = 'img/unfavourite.png';
+            event.target.className = 'favourite';
+          } else {
+            alert("Something Went Wrong");
+            console.log(error);
+          }
+        })
+      }
+    }
+  });
+
+  favIcon.append(favouriteIcon);
+  li.append(favIcon);
 
   const image = document.createElement('img');
   image.className = 'lazyload restaurant-img ';
   image.dataset.src = DBHelper.smallImageUrlForRestaurant(restaurant);
-  image.src= "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+  image.src = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
   image.alt = restaurant.name + ' Restaurant';
   li.append(image);
 
@@ -175,14 +206,14 @@ createRestaurantHTML = (restaurant) => {
 addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
-    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
-    google.maps.event.addListener(marker, 'click', () => {
-      window.location.href = marker.url
-    });
+    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
+    marker.on("click", onClick);
+    function onClick() {
+      window.location.href = marker.options.url;
+    }
     self.markers.push(marker);
   });
 }
-
 /** Add a service worker. */
 
 if ('serviceWorker' in navigator) {
@@ -198,9 +229,3 @@ if ('serviceWorker' in navigator) {
       })
   });
 }
-
-/** improve the map  */
-google.maps.event.addListenerOnce(map, "idle", () => {
-  //referencing iframe here would work
-  iframe.className ="toto";
-});
