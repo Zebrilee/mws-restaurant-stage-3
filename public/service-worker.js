@@ -1,4 +1,4 @@
-var filesToCache = [
+const cachedFiles = [
   '/',
   'index.html',
   'restaurant.html',
@@ -29,11 +29,13 @@ var filesToCache = [
   'js/dbhelper.min.js',
   'js/idb.min.js',
   'js/lazysizes.min.js',
-  'js/restaurant_info.min.js'
+  'js/restaurant_info.min.js',
+  'js/offline.min.js',
+  'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
+  'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js'
 ];
 
-
-let cacheName = 'restaurant-review-cache-v10';
+let cacheName = 'restaurant-review-cache-v2';
 
 // Listen for install event, set callback
 self.addEventListener('install', function (event) {
@@ -41,44 +43,45 @@ self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.open(cacheName)
     .then(function (cache) {
-      return cache.addAll(filesToCache);
+      return cache.addAll(cachedFiles);
     })
   );
 });
 
 //fetch event in order to cache them
-self.addEventListener('fetch', function (event) {
+self.addEventListener('fetch', event => {
   //console.log('Fetch event for ', event.request.url);
+  var url = new URL(event.request.url);
+  var req = event.request;
+  if (url.origin != location.origin) {
+    return;
+  }
+  if (url.origin === location.origin && url.pathname === "/") {
+    req = new Request("/index.html");
+  }
+
   event.respondWith(
-    caches.match(event.request).then(function (response) {
-      if (response) {
-        //console.log('Found ', event.request.url, ' in cache');
-        return response;
-      }
-      //console.log('Network request for ', event.request.url);
-      return fetch(event.request).then(function (response) {
-        if (response.status === 404) {
-          return caches.match('404.html');
-        }
-        return caches.open(cacheName).then(function (cache) {
-          if (event.request.url.indexOf('test') < 0) {
-            cache.put(event.request.url, response.clone());
+    caches
+    .open(cacheName)
+    .then(cache => {
+      return cache.match(req)
+        .then(response => {
+          if (response) {
+            return response;
           }
-          return response;
+          return fetch(req)
+            .then(r => {
+              cache.put(req, r.clone())
+              return r;
+            });
         });
-      });
-    }).catch(function (error) {
-      //console.log('Error, ', error);
-      return caches.match('offline.html');
     })
   );
 });
 
-self.addEventListener('activate', function (event) {
+self.addEventListener('activate', event => {
   //console.log('Activating new service worker...');
-
   const cacheWhitelist = [cacheName];
-
   event.waitUntil(
     caches.keys().then(function (cacheNames) {
       return Promise.all(
