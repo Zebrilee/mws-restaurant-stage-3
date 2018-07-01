@@ -16,17 +16,9 @@ body {
   position: relative
 }
 
-a {
-  text-decoration: none
-}
-
-a:hover {
-  color: #0277bd
-}
-
-a:focus {
-  color: #0277bd
-}
+a {text-decoration: none}
+a:hover {color: #0277bd}
+a:focus {color: #0277bd}
 
 h1,
 h2,
@@ -59,13 +51,9 @@ a.skip {
   z-index: 1000
 }
 
-a.skip:active {
-  top: 0
-}
+a.skip:active {top: 0}
 
-a.skip:focus {
-  top: 0
-}
+a.skip:focus {top: 0}
 
 nav {
   height: 80px;
@@ -75,9 +63,7 @@ nav {
   display: flex
 }
 
-nav h1 {
-  margin: auto
-}
+nav h1 {margin: auto}
 
 nav h1 a {
   color: #fff;
@@ -85,6 +71,13 @@ nav h1 a {
   letter-spacing: 8px;
   text-transform: uppercase
 }
+nav #offline-msg {display: none;}
+
+.offline nav {
+  background-color: red;
+  color: black;
+}
+.offline nav #offline-msg {display: block;}
 
 header {
   position: -webkit-sticky;
@@ -107,9 +100,7 @@ header {
   width: 100%
 }
 
-#footer a {
-  color: #ff9800
-}
+#footer a {color: #ff9800}
 
 #footer a:focus {
   background-color: #ff9800;

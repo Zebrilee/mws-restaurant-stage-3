@@ -6,13 +6,9 @@
   width: calc(50% - 80px)
 }
 
-#breadcrumb li {
-  display: inline
-}
+#breadcrumb li {display: inline}
 
-#breadcrumb li a {
-  color: #0d47a1
-}
+#breadcrumb li a {color: #0d47a1}
 
 #breadcrumb li a:focus {
   color: #f3f3f3;
@@ -63,9 +59,7 @@
   color: #fff
 }
 
-#restaurant-address {
-  margin: 10px 0
-}
+#restaurant-address {margin: 10px 0}
 
 #restaurant-cuisine {
   background-color: #333;
@@ -79,9 +73,7 @@
   width: 90%
 }
 
-#restaurant-cuisine:focus {
-  background: #d43900
-}
+#restaurant-cuisine:focus {background: #d43900}
 
 #restaurant-container {
   border-bottom: 1px solid #d9d9d9;
@@ -97,7 +89,8 @@
   padding: 30px 40px 40px;
 }
 
-#reviews-container h2, #review-form-container h2 {
+#reviews-container h2,
+#review-form-container h2 {
   color: #d43900;
   font-size: 2em;
   font-weight: 300;
@@ -156,31 +149,25 @@
   color: white
 }
 
-.reviewer {
-  font-size: 1.2em
-}
+.reviewer {font-size: 1.2em}
 
 .review-date {
   color: #eee;
   font-size: .9em
 }
 
-#restaurant-hours td {
-  color: #424242
-}
+#restaurant-hours td {color: #424242}
 
 #restaurant-caption {
   font-size: 1.2em;
   font-weight: 500
 }
 
-
-/* Todo imporove this part  */
-
-#review-form-container{
+#review-form-container {
   width: calc(43% - 40px);
   padding: 30px 40px 90px
 }
+
 #review-form input {
   width: 100%;
   height: 35px;
@@ -195,7 +182,6 @@
   background-color: white;
   border: 1px solid #fff;
   font-size: 1em;
-
 }
 
 #review-form textarea {
@@ -214,17 +200,12 @@
   border: 0;
   margin-top: 8px;
   padding: 10px 20px;
+  cursor: pointer;
 }
-nav #offline-msg {
-  display:none;
-}
-.offline nav {
-  background-color: red;
-  color:black;
-}
-.offline nav #offline-msg {
-  display:block;
-}
+
+
+
+
 
 .fav-icon {
   position: absolute;

@@ -21,9 +21,9 @@
           "Sunday": "12:00 pm - 4:00 pm, 5:30 pm - 11:00 pm"
         },
         "createdAt": 1504095563444,
-        "updatedAt": "2017-09-14T14:01:27.653Z",
+        "updatedAt": "2018-06-30T23:27:07.423Z",
         "id": 1,
-        "is_favorite": false
+        "is_favorite": "false"
       },
       {
         "name": "Emily",
@@ -45,8 +45,8 @@
           "Sunday": "12:00 pm - 3:00 pm, 5:00 pm - 11:00 pm"
         },
         "createdAt": 1504095568414,
-        "updatedAt": "2017-09-14T14:05:54.800Z",
-        "is_favorite": false,
+        "updatedAt": "2018-06-30T22:49:15.249Z",
+        "is_favorite": "false",
         "id": 2
       },
       {
@@ -564,6 +564,78 @@
         "createdAt": "2018-06-30T10:20:06.093Z",
         "updatedAt": "2018-06-30T10:20:06.093Z",
         "id": 36
+      },
+      {
+        "restaurant_id": "2",
+        "name": "vigo",
+        "rating": "4",
+        "comments": "so good!",
+        "createdAt": "2018-06-30T22:41:31.771Z",
+        "updatedAt": "2018-06-30T22:41:31.771Z",
+        "id": 37
+      },
+      {
+        "restaurant_id": "4",
+        "name": "test",
+        "rating": "3",
+        "comments": "bof",
+        "createdAt": "2018-06-30T22:57:40.079Z",
+        "updatedAt": "2018-06-30T22:57:40.079Z",
+        "id": 38
+      },
+      {
+        "restaurant_id": "4",
+        "name": "test 2",
+        "rating": "5",
+        "comments": "amazing",
+        "createdAt": "2018-06-30T22:58:29.118Z",
+        "updatedAt": "2018-06-30T22:58:29.118Z",
+        "id": 39
+      },
+      {
+        "restaurant_id": "2",
+        "name": "vigo",
+        "rating": "4",
+        "comments": "great",
+        "createdAt": "2018-06-30T23:02:26.029Z",
+        "updatedAt": "2018-06-30T23:02:26.029Z",
+        "id": 40
+      },
+      {
+        "restaurant_id": "1",
+        "name": "test",
+        "rating": "2",
+        "comments": "booooof",
+        "createdAt": "2018-06-30T23:16:19.144Z",
+        "updatedAt": "2018-06-30T23:16:19.144Z",
+        "id": 41
+      },
+      {
+        "restaurant_id": "1",
+        "name": "test2",
+        "rating": "5",
+        "comments": "awesomazing!",
+        "createdAt": "2018-06-30T23:17:08.404Z",
+        "updatedAt": "2018-06-30T23:17:08.404Z",
+        "id": 42
+      },
+      {
+        "restaurant_id": "1",
+        "name": "vigo",
+        "rating": "4",
+        "comments": "i'll be back",
+        "createdAt": "2018-06-30T23:21:59.446Z",
+        "updatedAt": "2018-06-30T23:21:59.446Z",
+        "id": 43
+      },
+      {
+        "restaurant_id": "1",
+        "name": "aya",
+        "rating": "3",
+        "comments": "good",
+        "createdAt": "2018-06-30T23:27:45.562Z",
+        "updatedAt": "2018-06-30T23:27:45.562Z",
+        "id": 44
       }
     ]
   },
@@ -619,7 +691,7 @@
       "id": 10
     },
     "reviews": {
-      "id": 36
+      "id": 44
     }
   }
 }
